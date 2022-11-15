@@ -34,6 +34,7 @@ namespace CustFeedbackRdSearchTool
             btnsearch.Click += Btnsearch_Click;
             tmimport.Click += Tmimport_Click;
             tmclose.Click += Tmclose_Click;
+            lb.Visible = false;
 
             bnMoveFirstItem.Click += BnMoveFirstItem_Click;
             bnMovePreviousItem.Click += BnMovePreviousItem_Click;
@@ -83,6 +84,8 @@ namespace CustFeedbackRdSearchTool
                 {
                     MessageBox.Show($"导入数据成功,请输入相关值进行查询", $"信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GlobalClasscs.ImData.ImporTable=ImportDt.Copy();
+                    lb.Visible = true;
+                    lb.Text = $"导入的数据有:"+GlobalClasscs.ImData.ImporTable.Rows.Count+$"行";
                 }
             }
             catch (Exception ex)
@@ -102,9 +105,10 @@ namespace CustFeedbackRdSearchTool
             {
                 //todo:
                 if (txtvalue.Text=="") throw new Exception("请填写内部色号记录再执行查询");
+                if(GlobalClasscs.ImData.ImporTable.Rows.Count==0) throw new Exception("没有导入记录,请检查."); 
 
                 //所需的值赋到Task类内
-                taskLogic.TaskId = 0;
+                taskLogic.TaskId = 1;
                 taskLogic.Searchvalue = txtvalue.Text;
 
                 //使用子线程工作(作用:通过调用子线程进行控制Load窗体的关闭情况)

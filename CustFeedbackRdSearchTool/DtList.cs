@@ -55,5 +55,32 @@ namespace CustFeedbackRdSearchTool
             }
             return dt;
         }
+
+        /// <summary>
+        /// 查询结果收集
+        /// </summary>
+        /// <returns></returns>
+        public DataTable Get_Searchdt()
+        {
+            var dt = new DataTable();
+            for (var i = 0; i < 2; i++)
+            {
+                var dc = new DataColumn();
+
+                switch (i)
+                {
+                    case 0:
+                        dc.ColumnName = "历史反馈配方内部色号";
+                        dc.DataType = Type.GetType("System.String");
+                        break;
+                    case 1:
+                        dc.ColumnName = "查询结果";
+                        dc.DataType = Type.GetType("System.String");
+                        break;
+                }
+                dt.Columns.Add(dc);
+            }
+            return dt;
+        }
     }
 }

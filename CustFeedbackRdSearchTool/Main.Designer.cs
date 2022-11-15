@@ -34,6 +34,9 @@
             this.tmimport = new System.Windows.Forms.ToolStripMenuItem();
             this.tmclose = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnsearch = new System.Windows.Forms.Button();
+            this.txtvalue = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.bngat = new System.Windows.Forms.BindingNavigator(this.components);
             this.bnCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -54,9 +57,7 @@
             this.tstotalrow = new System.Windows.Forms.ToolStripLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gvdtl = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtvalue = new System.Windows.Forms.TextBox();
-            this.btnsearch = new System.Windows.Forms.Button();
+            this.lb = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -93,6 +94,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lb);
             this.panel1.Controls.Add(this.btnsearch);
             this.panel1.Controls.Add(this.txtvalue);
             this.panel1.Controls.Add(this.label1);
@@ -101,6 +103,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(865, 44);
             this.panel1.TabIndex = 1;
+            // 
+            // btnsearch
+            // 
+            this.btnsearch.Location = new System.Drawing.Point(318, 11);
+            this.btnsearch.Name = "btnsearch";
+            this.btnsearch.Size = new System.Drawing.Size(75, 23);
+            this.btnsearch.TabIndex = 2;
+            this.btnsearch.Text = "查询";
+            this.btnsearch.UseVisualStyleBackColor = true;
+            // 
+            // txtvalue
+            // 
+            this.txtvalue.Location = new System.Drawing.Point(134, 11);
+            this.txtvalue.Name = "txtvalue";
+            this.txtvalue.Size = new System.Drawing.Size(163, 21);
+            this.txtvalue.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "反馈配方内部色号:";
             // 
             // panel8
             // 
@@ -285,30 +312,14 @@
             this.gvdtl.Size = new System.Drawing.Size(863, 393);
             this.gvdtl.TabIndex = 0;
             // 
-            // label1
+            // lb
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "反馈配方内部色号:";
-            // 
-            // txtvalue
-            // 
-            this.txtvalue.Location = new System.Drawing.Point(134, 11);
-            this.txtvalue.Name = "txtvalue";
-            this.txtvalue.Size = new System.Drawing.Size(163, 21);
-            this.txtvalue.TabIndex = 1;
-            // 
-            // btnsearch
-            // 
-            this.btnsearch.Location = new System.Drawing.Point(318, 11);
-            this.btnsearch.Name = "btnsearch";
-            this.btnsearch.Size = new System.Drawing.Size(75, 23);
-            this.btnsearch.TabIndex = 2;
-            this.btnsearch.Text = "查询";
-            this.btnsearch.UseVisualStyleBackColor = true;
+            this.lb.AutoSize = true;
+            this.lb.ForeColor = System.Drawing.Color.Red;
+            this.lb.Location = new System.Drawing.Point(668, 20);
+            this.lb.Name = "lb";
+            this.lb.Size = new System.Drawing.Size(0, 12);
+            this.lb.TabIndex = 3;
             // 
             // Main
             // 
@@ -369,6 +380,7 @@
         private System.Windows.Forms.TextBox txtvalue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnsearch;
+        private System.Windows.Forms.Label lb;
     }
 }
 
